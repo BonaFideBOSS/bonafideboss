@@ -1,27 +1,94 @@
-body {
-    overflow: hidden;
-}
-
-section {
-    padding-top: 100px;
-    width: 100%;
-    height: 100%;
-    }
-
-.navbar {
-position: fixed;
-width: 100%;
-z-index: 1;
-}
-
 ::-webkit-scrollbar{
-width: 5px;
+    width: 5px;
 }
-
+    
 ::-webkit-scrollbar-track {
 background: #1e1e24;
 }
 
 ::-webkit-scrollbar-thumb {
 background: gray;
+}
+
+body {
+    overflow: hidden;
+}
+
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    }
+
+#imdbpolls {
+    overflow: auto;
+    -webkit-overflow-scrolling: auto;
+}
+
+#imdbpolls::-webkit-scrollbar {
+    width: 4px;
+    background: #1e1e24;
+}
+
+select {
+    margin-bottom: 2rem;
+}
+
+#myTable {
+    counter-reset: Serial;
+    border-collapse: separate;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+#myTable tbody tr th::before {
+    counter-increment: Serial; /* Increment the Serial counter */
+    content: counter(Serial); /* Display the counter */
+}
+
+#myTable tbody td:nth-child(4),#myTable thead th:nth-child(4),#myTable tfoot th:nth-child(2) {
+    text-align: center;
+}
+
+#myTable tbody tr {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+#myTable tbody tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+#myTable tbody tr:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+#myTable thead tr, #myTable tfoot tr {
+    font-size: 1rem;
+    background: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.9));
+    color: white;
+}
+
+.polllinks {
+    color: black;
+    text-decoration: none;
+    --fill-color: black;
+    display: block;
+    -webkit-text-stroke: var(--fill-color);
+    background: linear-gradient(var(--fill-color) 0 100%) left/0 no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: 0.5s linear;
+}
+
+.polllinks:hover {
+    background-size: 100%;
 }
