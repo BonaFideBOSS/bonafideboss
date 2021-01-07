@@ -25,7 +25,30 @@ section {
     position: fixed;
     width: 100%;
     z-index: 1;
-    }
+    padding: 1rem;
+}
+
+.navbar .d-flex {
+    margin: auto;
+    padding: auto;
+    margin-right: 0;
+}
+
+.navbar .nav-link {
+    --fill-color: white;
+    display: block;
+    -webkit-text-stroke: var(--fill-color);
+    background: linear-gradient(var(--fill-color) 0 100%) left/0 no-repeat;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: 0.5s linear;
+}
+
+.navbar .nav-link:hover {
+    background-size: 100%;
+}
+
 
 #imdbpolls {
     overflow: auto;
@@ -34,11 +57,15 @@ section {
 
 #imdbpolls::-webkit-scrollbar {
     width: 4px;
-    background: #1e1e24;
 }
 
-select {
+#imdbpolls select {
     margin-bottom: 2rem;
+}
+
+#imdbPolls input {
+    border-radius: 10px;
+    outline: none;
 }
 
 #myTable {
