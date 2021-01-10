@@ -69,17 +69,10 @@ section {
 }
 
 #myTable {
-    counter-reset: Serial;
-    border-collapse: separate;
     border-radius: 10px;
     margin-bottom: 2rem;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-}
-
-#myTable tbody tr th::before {
-    counter-increment: Serial; /* Increment the Serial counter */
-    content: counter(Serial); /* Display the counter */
 }
 
 #myTable tbody td:nth-child(4),#myTable thead th:nth-child(4),#myTable tfoot th:nth-child(2) {
